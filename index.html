@@ -1,29 +1,352 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>YILDIZname - Gizlilik Politikası</title>
-<style>
-  body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #333; }
-  h1 { color: #1a1a2e; }
-  h2 { color: #4a4a8a; margin-top: 30px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yıldızname - Gizlilik Politikası ve Kullanım Şartları</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;700&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #080c1a;
+            color: #d4cbb8;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        .stars {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.03) 0%, transparent 50%),
+                        radial-gradient(ellipse at 80% 20%, rgba(75,0,130,0.04) 0%, transparent 50%);
+            pointer-events: none; z-index: 0;
+        }
+
+        .container {
+            position: relative; z-index: 1;
+            max-width: 800px; margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        .header {
+            text-align: center; margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(201,168,76,0.2);
+        }
+
+        .header .moon { font-size: 48px; margin-bottom: 12px; }
+
+        .header h1 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 32px; color: #c9a84c;
+            letter-spacing: 6px; font-weight: 700;
+            text-shadow: 0 0 20px rgba(201,168,76,0.3);
+        }
+
+        .header .subtitle {
+            font-size: 13px; color: #7a6a50;
+            letter-spacing: 3px; margin-top: 8px;
+            font-style: italic;
+        }
+
+        .update-date {
+            text-align: center; font-size: 12px;
+            color: #5a5040; letter-spacing: 1px;
+            margin-bottom: 40px;
+        }
+
+        .nav-tabs {
+            display: flex; gap: 12px; justify-content: center;
+            margin-bottom: 40px; flex-wrap: wrap;
+        }
+
+        .nav-tab {
+            padding: 10px 24px; border-radius: 20px;
+            border: 1px solid rgba(201,168,76,0.3);
+            background: rgba(201,168,76,0.06);
+            color: #c9a84c; font-size: 13px;
+            font-weight: 600; cursor: pointer;
+            transition: all 0.3s; letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .nav-tab:hover, .nav-tab.active {
+            background: #c9a84c; color: #080c1a;
+        }
+
+        .section { margin-bottom: 36px; }
+
+        .section h2 {
+            font-family: 'Crimson Pro', serif;
+            font-size: 22px; color: #c9a84c;
+            margin-bottom: 16px; padding-bottom: 8px;
+            border-bottom: 1px solid rgba(201,168,76,0.15);
+            letter-spacing: 1px;
+        }
+
+        .section h3 {
+            font-size: 15px; color: #e8dfc0;
+            margin: 16px 0 8px; font-weight: 600;
+        }
+
+        .section p, .section li {
+            font-size: 14px; color: #9a8f72;
+            margin-bottom: 10px;
+        }
+
+        .section ul {
+            padding-left: 20px; margin-bottom: 12px;
+        }
+
+        .section li { margin-bottom: 6px; }
+
+        .highlight-box {
+            background: rgba(201,168,76,0.06);
+            border: 1px solid rgba(201,168,76,0.2);
+            border-radius: 12px; padding: 16px 20px;
+            margin: 16px 0;
+        }
+
+        .highlight-box p { color: #c9a84c; font-size: 13px; }
+
+        .contact-box {
+            background: rgba(201,168,76,0.08);
+            border: 1px solid rgba(201,168,76,0.25);
+            border-radius: 16px; padding: 24px;
+            text-align: center; margin-top: 40px;
+        }
+
+        .contact-box h3 {
+            color: #c9a84c; font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .contact-box a {
+            color: #c9a84c; text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-box a:hover { text-decoration: underline; }
+
+        .divider {
+            width: 60px; height: 1px;
+            background: rgba(201,168,76,0.3);
+            margin: 40px auto;
+        }
+
+        .page { display: none; }
+        .page.active { display: block; }
+
+        .footer {
+            text-align: center; margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(201,168,76,0.1);
+            font-size: 12px; color: #5a5040;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 40px 16px 60px; }
+            .header h1 { font-size: 24px; letter-spacing: 4px; }
+            .section h2 { font-size: 18px; }
+        }
+    </style>
 </head>
 <body>
-<h1>YILDIZname Gizlilik Politikası</h1>
-<p>Son güncelleme: 29 Mart 2026</p>
+    <div class="stars"></div>
+    <div class="container">
+        <div class="header">
+            <div class="moon">🌙</div>
+            <h1>YILDIZNAME</h1>
+            <p class="subtitle">✦ Gizlilik Politikası ve Kullanım Şartları ✦</p>
+        </div>
 
-<h2>1. Toplanan Bilgiler</h2>
-<p>YILDIZname uygulaması yalnızca sizin girdiğiniz profil bilgilerini (ad, doğum tarihi, şehir) cihazınızda yerel olarak saklar. Bu bilgiler sunucularımıza gönderilmez.</p>
+        <p class="update-date">Son güncelleme: 10 Nisan 2026</p>
 
-<h2>2. Reklam</h2>
-<p>Uygulamamız Google AdMob reklam hizmetini kullanmaktadır. AdMob, reklam kişiselleştirme amacıyla cihaz bilgilerinizi toplayabilir. Daha fazla bilgi için Google'ın gizlilik politikasını inceleyebilirsiniz.</p>
+        <div class="nav-tabs">
+            <a class="nav-tab active" onclick="showPage('privacy')">Gizlilik Politikası</a>
+            <a class="nav-tab" onclick="showPage('terms')">Kullanım Şartları</a>
+        </div>
 
-<h2>3. Kamera ve Galeri</h2>
-<p>Kahve falı özelliği için kamera ve galeri erişimi talep edilmektedir. Bu fotoğraflar yalnızca fal yorumu için kullanılır ve saklanmaz.</p>
+        <!-- GİZLİLİK POLİTİKASI -->
+        <div id="privacy" class="page active">
 
-<h2>4. İletişim</h2>
-<p>Sorularınız için: oguzhan_oral@outlook.com</p>
+            <div class="section">
+                <h2>1. Genel Bakış</h2>
+                <p>Yıldızname - Fal ve Astroloji ("Uygulama"), kullanıcılarına kahve falı, tarot falı, el falı, burç yorumu ve doğum haritası hizmetleri sunan bir mobil uygulamadır. Bu gizlilik politikası, uygulamayı kullanırken toplanan, işlenen ve saklanan verileri açıklamaktadır.</p>
+            </div>
+
+            <div class="section">
+                <h2>2. Toplanan Veriler</h2>
+                
+                <h3>2.1 Hesap Bilgileri</h3>
+                <ul>
+                    <li><strong>Google ile Giriş:</strong> Google hesabınızla giriş yaptığınızda adınız, e-posta adresiniz ve profil fotoğrafınız Google tarafından paylaşılır. Bu bilgiler yalnızca kimlik doğrulama amacıyla kullanılır.</li>
+                    <li><strong>Misafir Giriş:</strong> Misafir olarak giriş yaptığınızda anonim bir kullanıcı kimliği oluşturulur. Kişisel bilgi toplanmaz.</li>
+                </ul>
+
+                <h3>2.2 Profil Bilgileri</h3>
+                <p>Fal yorumlarının kişiselleştirilmesi için sizin girdiğiniz aşağıdaki bilgiler toplanır:</p>
+                <ul>
+                    <li>Ad ve soyad</li>
+                    <li>Doğum tarihi (gün, ay, yıl)</li>
+                    <li>Doğum saati ve şehri</li>
+                    <li>Cinsiyet</li>
+                    <li>İlişki durumu</li>
+                    <li>Çalışma durumu</li>
+                </ul>
+
+                <h3>2.3 Kullanım Verileri</h3>
+                <ul>
+                    <li>Fal geçmişi (baktırılan fallar ve yorumlar)</li>
+                    <li>Kredi bakiyesi ve işlem geçmişi</li>
+                    <li>Reklam izleme kayıtları</li>
+                </ul>
+
+                <h3>2.4 Kamera ve Galeri</h3>
+                <p>Kahve falı ve el falı özellikleri için kamera ve galeri erişimi talep edilmektedir. Çekilen fotoğraflar yalnızca fal deneyimi için kullanılır, sunucularımıza yüklenmez ve cihazınızda geçici olarak saklanır.</p>
+            </div>
+
+            <div class="section">
+                <h2>3. Verilerin Saklanması</h2>
+                <p>Verileriniz iki şekilde saklanır:</p>
+                <ul>
+                    <li><strong>Cihaz Üzerinde (Yerel Depolama):</strong> Oturum bilgileri, tercihler ve geçici veriler cihazınızda şifreli olarak saklanır.</li>
+                    <li><strong>Bulut Sunucu (Supabase):</strong> Hesap bilgileri, profil verileri, fal geçmişi ve kredi bilgileri güvenli bulut altyapısında (Supabase) saklanır. Supabase, Row Level Security (RLS) ile her kullanıcının yalnızca kendi verilerine erişebilmesini sağlar.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. Yapay Zeka Kullanımı</h2>
+                <p>Fal yorumları, Anthropic tarafından geliştirilen Claude yapay zeka modeli kullanılarak üretilmektedir. Profil bilgileriniz (ad, burç, ilişki durumu vb.) kişiselleştirilmiş yorumlar oluşturmak amacıyla yapay zeka modeline gönderilir. Bu veriler yapay zeka tarafından saklanmaz ve yalnızca anlık yorum üretimi için kullanılır.</p>
+            </div>
+
+            <div class="section">
+                <h2>5. Üçüncü Taraf Hizmetleri</h2>
+                <ul>
+                    <li><strong>Google AdMob:</strong> Uygulamamız reklam gösterimi için Google AdMob kullanmaktadır. AdMob, reklam kişiselleştirme amacıyla cihaz tanımlayıcılarını ve kullanım verilerini toplayabilir. Detaylar için <a href="https://policies.google.com/privacy" style="color:#c9a84c;">Google Gizlilik Politikası</a>'nı inceleyebilirsiniz.</li>
+                    <li><strong>Google Sign-In:</strong> Kimlik doğrulama için Google Sign-In kullanılmaktadır.</li>
+                    <li><strong>Supabase:</strong> Veri depolama ve kullanıcı yönetimi için Supabase altyapısı kullanılmaktadır.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>6. Veri Güvenliği</h2>
+                <p>Verilerinizin güvenliği bizim için önemlidir. Aşağıdaki önlemler alınmaktadır:</p>
+                <ul>
+                    <li>Tüm veri iletişimi HTTPS şifreleme ile korunmaktadır.</li>
+                    <li>Veritabanı erişimi Row Level Security (RLS) kurallarıyla sınırlandırılmıştır.</li>
+                    <li>Her kullanıcı yalnızca kendi verilerine erişebilir.</li>
+                    <li>Fotoğraflar sunuculara yüklenmez, cihazda kalır.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>7. Kullanıcı Hakları</h2>
+                <p>Aşağıdaki haklara sahipsiniz:</p>
+                <ul>
+                    <li><strong>Erişim Hakkı:</strong> Hakkınızda toplanan verilere uygulama içinden erişebilirsiniz.</li>
+                    <li><strong>Silme Hakkı:</strong> Hesabınızın ve tüm verilerinizin silinmesini talep edebilirsiniz. Bunun için aşağıdaki iletişim adresine yazmanız yeterlidir.</li>
+                    <li><strong>Düzeltme Hakkı:</strong> Profil bilgilerinizi uygulama içinden istediğiniz zaman güncelleyebilirsiniz.</li>
+                    <li><strong>Fal Geçmişi Temizleme:</strong> Fal geçmişinizi uygulama içindeki "Temizle" butonu ile silebilirsiniz.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>8. Çocukların Gizliliği</h2>
+                <p>Uygulamamız 13 yaşın altındaki çocuklara yönelik değildir. Bilerek 13 yaş altı kullanıcılardan veri toplamıyoruz. Eğer 13 yaşın altında bir çocuğun veri paylaştığını fark ederseniz, lütfen bizimle iletişime geçin.</p>
+            </div>
+
+            <div class="section">
+                <h2>9. Değişiklikler</h2>
+                <p>Bu gizlilik politikası zaman zaman güncellenebilir. Önemli değişiklikler uygulama içinden bildirilecektir. Uygulamayı kullanmaya devam etmeniz, güncel politikayı kabul ettiğiniz anlamına gelir.</p>
+            </div>
+        </div>
+
+        <!-- KULLANIM ŞARTLARI -->
+        <div id="terms" class="page">
+
+            <div class="section">
+                <h2>1. Hizmet Tanımı</h2>
+                <p>Yıldızname - Fal ve Astroloji, eğlence amaçlı bir fal ve astroloji uygulamasıdır. Sunulan tüm fal yorumları, burç analizleri ve doğum haritası okumaları yapay zeka tarafından üretilmektedir ve yalnızca eğlence amacı taşımaktadır.</p>
+                <div class="highlight-box">
+                    <p>⚠️ Önemli: Fal yorumları bilimsel bir dayanağa sahip değildir. Sağlık, hukuk, finans veya yaşamsal kararlarınızda fal yorumlarını referans almayınız. Profesyonel danışmanlık hizmetlerinin yerini tutmaz.</p>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>2. Hesap ve Üyelik</h2>
+                <ul>
+                    <li>Uygulamayı Google hesabınızla veya misafir olarak kullanabilirsiniz.</li>
+                    <li>Misafir hesapları geçicidir ve cihaz değişikliğinde kaybolabilir.</li>
+                    <li>Google hesabıyla giriş yapan kullanıcıların verileri bulutta güvenle saklanır.</li>
+                    <li>Hesabınızın güvenliğinden siz sorumlusunuz.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>3. Kredi Sistemi</h2>
+                <ul>
+                    <li>Fal baktırmak için uygulama içi kredi kullanılmaktadır.</li>
+                    <li>Her gün 10 ücretsiz kredi yenilenir.</li>
+                    <li>Reklam izleyerek ek kredi kazanabilirsiniz (günlük limit dahilinde).</li>
+                    <li>Kullanılan krediler iade edilmez.</li>
+                    <li>Fal bekleme süresi devam ederken hesaptan çıkış yapılması durumunda harcanan kredi iade edilmez.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>4. Kullanım Kuralları</h2>
+                <p>Aşağıdaki davranışlar yasaktır:</p>
+                <ul>
+                    <li>Uygulamanın tersine mühendislik yapılması veya kaynak kodunun çıkarılması</li>
+                    <li>Kredi sisteminin manipüle edilmesi veya hileli yollarla kredi elde edilmesi</li>
+                    <li>Uygulamanın kötüye kullanılması veya diğer kullanıcıların deneyiminin bozulması</li>
+                    <li>Otomatik bot veya script kullanarak toplu istek gönderilmesi</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>5. Fikri Mülkiyet</h2>
+                <p>Uygulamadaki tüm tasarımlar, metinler, grafikler ve yazılım kodu Yıldızname'ye aittir. İzinsiz kopyalanması, dağıtılması veya değiştirilmesi yasaktır.</p>
+            </div>
+
+            <div class="section">
+                <h2>6. Sorumluluk Sınırı</h2>
+                <ul>
+                    <li>Fal yorumları tamamen eğlence amaçlıdır ve herhangi bir garanti içermez.</li>
+                    <li>Uygulama "olduğu gibi" sunulmaktadır.</li>
+                    <li>Teknik aksaklıklar, sunucu kesintileri veya veri kaybı durumlarında sorumluluk kabul edilmez.</li>
+                    <li>Fal yorumlarına dayanarak alınan kararlardan Yıldızname sorumlu değildir.</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>7. Değişiklikler</h2>
+                <p>Bu kullanım şartları önceden bildirilmeksizin güncellenebilir. Güncel şartlar her zaman bu sayfada yayınlanacaktır. Uygulamayı kullanmaya devam etmeniz, güncel şartları kabul ettiğiniz anlamına gelir.</p>
+            </div>
+        </div>
+
+        <div class="contact-box">
+            <h3>📬 İletişim</h3>
+            <p style="color:#9a8f72; font-size:14px; margin-bottom:8px;">Sorularınız, talepleriniz veya veri silme başvuruları için:</p>
+            <a href="mailto:oguzhan_oral@outlook.com">oguzhan_oral@outlook.com</a>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 Yıldızname - Fal ve Astroloji. Tüm hakları saklıdır.</p>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            event.target.classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
