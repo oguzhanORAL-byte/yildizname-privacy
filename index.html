@@ -162,7 +162,7 @@
             <p class="subtitle">✦ Gizlilik Politikası ve Kullanım Şartları ✦</p>
         </div>
 
-        <p class="update-date">Son güncelleme: 10 Nisan 2026</p>
+        <p class="update-date">Son güncelleme: 5 Mayıs 2026</p>
 
         <div class="nav-tabs">
             <a class="nav-tab active" onclick="showPage('privacy')">Gizlilik Politikası</a>
@@ -183,6 +183,7 @@
                 <h3>2.1 Hesap Bilgileri</h3>
                 <ul>
                     <li><strong>Google ile Giriş:</strong> Google hesabınızla giriş yaptığınızda adınız, e-posta adresiniz ve profil fotoğrafınız Google tarafından paylaşılır. Bu bilgiler yalnızca kimlik doğrulama amacıyla kullanılır.</li>
+                    <li><strong>Apple ile Giriş:</strong> Apple hesabınızla giriş yaptığınızda Apple tarafından sağlanan kullanıcı kimliği ve paylaşmayı seçerseniz ad/e-posta bilgisi kimlik doğrulama amacıyla kullanılır.</li>
                     <li><strong>Misafir Giriş:</strong> Misafir olarak giriş yaptığınızda anonim bir kullanıcı kimliği oluşturulur. Kişisel bilgi toplanmaz.</li>
                 </ul>
 
@@ -202,18 +203,23 @@
                     <li>Fal geçmişi (baktırılan fallar ve yorumlar)</li>
                     <li>Kredi bakiyesi ve işlem geçmişi</li>
                     <li>Reklam izleme kayıtları</li>
+                    <li>Uygulama içi satın alma doğrulama kayıtları (ürün kimliği, işlem/satın alma tokenı ve platform bilgisi)</li>
                 </ul>
 
                 <h3>2.4 Kamera ve Galeri</h3>
                 <p>Kahve falı ve el falı özellikleri için kamera ve galeri erişimi talep edilmektedir. Çekilen fotoğraflar yalnızca fal deneyimi için kullanılır, sunucularımıza yüklenmez ve cihazınızda geçici olarak saklanır.</p>
+
+                <h3>2.5 Bildirimler</h3>
+                <p>Falınızın hazır olduğunu bildirmek ve uygulama deneyimini desteklemek için cihaz bildirim izni talep edilebilir. Bildirim gönderebilmek için cihazınıza ait bildirim tokenı hesabınızla ilişkilendirilebilir.</p>
             </div>
 
             <div class="section">
                 <h2>3. Verilerin Saklanması</h2>
                 <p>Verileriniz iki şekilde saklanır:</p>
                 <ul>
-                    <li><strong>Cihaz Üzerinde (Yerel Depolama):</strong> Oturum bilgileri, tercihler ve geçici veriler cihazınızda şifreli olarak saklanır.</li>
+                    <li><strong>Cihaz Üzerinde (Yerel Depolama):</strong> Oturum bilgileri, tercihler ve geçici veriler cihazınızda yerel olarak saklanır.</li>
                     <li><strong>Bulut Sunucu (Supabase):</strong> Hesap bilgileri, profil verileri, fal geçmişi ve kredi bilgileri güvenli bulut altyapısında (Supabase) saklanır. Supabase, Row Level Security (RLS) ile her kullanıcının yalnızca kendi verilerine erişebilmesini sağlar.</li>
+                    <li><strong>Backend Sunucusu (Render):</strong> Kredi, satın alma doğrulama ve fal oluşturma işlemleri Render üzerinde çalışan güvenli backend servisimiz aracılığıyla işlenir.</li>
                 </ul>
             </div>
 
@@ -227,7 +233,10 @@
                 <ul>
                     <li><strong>Google AdMob:</strong> Uygulamamız reklam gösterimi için Google AdMob kullanmaktadır. AdMob, reklam kişiselleştirme amacıyla cihaz tanımlayıcılarını ve kullanım verilerini toplayabilir. Detaylar için <a href="https://policies.google.com/privacy" style="color:#c9a84c;">Google Gizlilik Politikası</a>'nı inceleyebilirsiniz.</li>
                     <li><strong>Google Sign-In:</strong> Kimlik doğrulama için Google Sign-In kullanılmaktadır.</li>
+                    <li><strong>Apple ile Giriş:</strong> iOS kullanıcıları için Apple ile giriş desteği sunulmaktadır.</li>
+                    <li><strong>Apple App Store ve Google Play:</strong> Uygulama içi satın almaların doğrulanması ve kredilerin hesabınıza tanımlanması için ilgili mağaza servisleri kullanılmaktadır.</li>
                     <li><strong>Supabase:</strong> Veri depolama ve kullanıcı yönetimi için Supabase altyapısı kullanılmaktadır.</li>
+                    <li><strong>Render:</strong> Backend servislerimiz Render altyapısında barındırılmaktadır.</li>
                 </ul>
             </div>
 
@@ -247,9 +256,10 @@
                 <p>Aşağıdaki haklara sahipsiniz:</p>
                 <ul>
                     <li><strong>Erişim Hakkı:</strong> Hakkınızda toplanan verilere uygulama içinden erişebilirsiniz.</li>
-                    <li><strong>Silme Hakkı:</strong> Hesabınızın ve tüm verilerinizin silinmesini talep edebilirsiniz. Bunun için aşağıdaki iletişim adresine yazmanız yeterlidir.</li>
+                    <li><strong>Silme Hakkı:</strong> Hesabınızı ve uygulama verilerinizi uygulama içindeki "Hesabı Sil" seçeneğiyle silebilir veya aşağıdaki iletişim adresinden silme talebinde bulunabilirsiniz.</li>
                     <li><strong>Düzeltme Hakkı:</strong> Profil bilgilerinizi uygulama içinden istediğiniz zaman güncelleyebilirsiniz.</li>
                     <li><strong>Fal Geçmişi Temizleme:</strong> Fal geçmişinizi uygulama içindeki "Temizle" butonu ile silebilirsiniz.</li>
+                    <li><strong>Reklam Gizlilik Tercihleri:</strong> Reklam kişiselleştirme ve gizlilik tercihlerinizi uygulama içinde sunulan reklam gizlilik seçenekleri üzerinden yönetebilirsiniz.</li>
                 </ul>
             </div>
 
@@ -278,9 +288,9 @@
             <div class="section">
                 <h2>2. Hesap ve Üyelik</h2>
                 <ul>
-                    <li>Uygulamayı Google hesabınızla veya misafir olarak kullanabilirsiniz.</li>
+                    <li>Uygulamayı Google hesabınızla, Apple hesabınızla veya misafir olarak kullanabilirsiniz.</li>
                     <li>Misafir hesapları geçicidir ve cihaz değişikliğinde kaybolabilir.</li>
-                    <li>Google hesabıyla giriş yapan kullanıcıların verileri bulutta güvenle saklanır.</li>
+                    <li>Google veya Apple hesabıyla giriş yapan kullanıcıların verileri bulutta güvenle saklanır.</li>
                     <li>Hesabınızın güvenliğinden siz sorumlusunuz.</li>
                 </ul>
             </div>
@@ -291,6 +301,7 @@
                     <li>Fal baktırmak için uygulama içi kredi kullanılmaktadır.</li>
                     <li>Her gün 10 ücretsiz kredi yenilenir.</li>
                     <li>Reklam izleyerek ek kredi kazanabilirsiniz (günlük limit dahilinde).</li>
+                    <li>Kredi paketleri Apple App Store veya Google Play üzerinden uygulama içi satın alma olarak sunulabilir.</li>
                     <li>Kullanılan krediler iade edilmez.</li>
                     <li>Fal bekleme süresi devam ederken hesaptan çıkış yapılması durumunda harcanan kredi iade edilmez.</li>
                 </ul>
